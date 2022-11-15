@@ -15,12 +15,10 @@ const IndexPage = ({data}) => (
 {
   data.allContentfulComics.edges.map(edge =>(
     <li key={edge.node.id}>
-    <Link to={edge.node.title}>{edge.node.title}</Link>
+    <Link to={edge.node.slug}>{edge.node.title}</Link>
     <div>
       <GatsbyImage image={edge.node.image.gatsbyImageData}/>
     </div>
-    <div>
-      </div>
     </li>
   ))
 }
@@ -40,12 +38,10 @@ export const query = graphql`
         node {
           title
           id
-          description {
-            raw
-          }
+          slug
           image {
             url
-            gatsbyImageData (width:300)
+            gatsbyImageData(width: 300)
           }
         }
       }
