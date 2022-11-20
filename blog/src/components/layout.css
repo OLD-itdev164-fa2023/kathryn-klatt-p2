@@ -1,13 +1,9 @@
+/*
+BestCom blue: 00a2e8
+BestCom yellow: ffc90e
+*/
+
 :root {
-  --border-radius: 4px;
-  --color-text: #333;
-  --color-primary: #7026b9;
-  --color-code-bg: #fff4db;
-  --color-code: #8a6534;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
   --font-lg: 18px;
   --font-md: 16px;
   --font-sm: 14px;
@@ -28,7 +24,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
-  font: sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: var(--font-md);
   line-height: var(--line-height-normal);
   overflow-y: scroll;
@@ -36,19 +32,20 @@ html {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  color: var(--color-text);
-  font-family: sans-serif;
-  font-family: var(--font-sans);
+  color: white;
   font-weight: normal;
   margin: 0;
   word-wrap: break-word;
-  background-color:aliceblue;
+  background: rgb(0,162,232);
+  background: radial-gradient(circle, rgba(0,162,232,1) 0%, rgba(255,201,14,1) 100%); 
+}
+footer a{
+  font-size: 1em;
 }
 a {
   background-color: transparent;
   color: var(--color-primary);
   text-decoration: none;
-  font-family: 'Rubik', sans-serif;
   font-size: 2em;
   font-weight: 500;
   text-decoration: none;
@@ -75,17 +72,33 @@ dfn {
 }
 h1 {
   margin: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  font-variant: small-caps;
+  font-size: 3em;
+  font-weight: 800;
+  -webkit-text-stroke: 1px #005073;
   padding: 0;
   line-height: var(--line-height-dense);
-  letter-spacing: -0.01em;
+  letter-spacing: .04em;
 }
-h1 > b {
-  color: var(--color-primary);
+ul > h1{
+  font-size: 2em;
 }
+h2 {
+  font-weight: 200;
+  font-style: italic;
+  margin: 2em 0em 2em 2em;
+  color: #0186bf;
+}
+h2 > b{
+  font-weight: 800;
+}
+
 img {
-  border-style: none;
+  border-style: double;
+  border-color: #005073;
   max-width: 100%;
+  margin-bottom: 5em;
 }
 code,
 kbd,
@@ -120,7 +133,9 @@ hgroup,
 img,
 figure,
 fieldset,
-ul,
+ul{
+  margin-left: 1em;
+}
 ol,
 dl,
 dd,

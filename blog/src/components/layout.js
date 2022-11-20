@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
         <footer
           style={{
             margin: `0 auto`,
-            fontSize: `var(--font-sm)`,
+            fontSize: `1em`,
           }}
         >
           © {new Date().getFullYear()} &middot; Built with
