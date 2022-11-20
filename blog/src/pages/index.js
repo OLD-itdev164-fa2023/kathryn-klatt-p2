@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -8,21 +8,19 @@ import Seo from "../components/seo"
 
 
 
-const IndexPage = ({data}) => (
+const IndexPage = ({ data }) => (
   <Layout>
-    <Seo title="Best Company"/>
-<ul>
-{
-  data.allContentfulComics.edges.map(edge =>(
-    <li key={edge.node.id}>
-    <Link to={edge.node.slug}>{edge.node.title}</Link>
+    <Seo title="Best Company" />
     <div>
-      <GatsbyImage image={edge.node.image.gatsbyImageData}/>
+      <StaticImage alt="Penty says: Good luck, have fun, no unions." src="https://images.ctfassets.net/y8mz9gdf2vff/2D0UPMldbFmF43ehuwL4vF/f2adb40adb2c2b474414981642cdccb8/penty.png" />
     </div>
-    </li>
-  ))
-}
-</ul>
+    <ul>
+      {data.allContentfulComics.edges.map(edge => (
+        <li key={edge.node.id}>
+          <Link to={edge.node.slug}>{edge.node.title}</Link>
+        </li>
+      ))}
+    </ul>
   </Layout>
 )
 
