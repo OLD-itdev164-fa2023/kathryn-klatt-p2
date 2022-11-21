@@ -15,7 +15,9 @@
     "gatsby-transformer-remark": "^6.0.0",
     "gatsby-transformer-sharp": "^5.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "rebass": "^3.0.0-12",
+    "styled-icons": "^10.46.0"
   },
   "devDependencies": {
     "prettier": "^2.7.1"
