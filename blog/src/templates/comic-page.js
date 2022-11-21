@@ -2,7 +2,12 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
+import styled from 'styled-components'
 //Import styles from Components as needed
+
+const styledLink = styled.Link`
+font-size: 1em;
+`
 
 const comicPage = ({data}) => {
     const {title, description, image, next, previous} = data.contentfulComics;
