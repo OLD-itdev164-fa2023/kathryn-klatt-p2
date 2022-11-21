@@ -1,20 +1,30 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 //Import styles from Components as needed
 
 const comicPage = ({data}) => {
-    const {title, description, image, previous, next} = data.contentfulComics
+    const {title, description, image, next, previous} = data.contentfulComics;
+    const nextPath = `/${next.slug}`;
+    const prevPath = `/${previous.slug}`
 
-    return(
-        <Layout>
+
+
+    return (
+      <Layout>
         <h1>{title}</h1>
-        <GatsbyImage image={image.gatsbyImageData}/>
-        <div dangerouslySetInnerHTML={{__html: description.childMarkdownRemark.html}}></div>
-        <div>{previous}</div>
-        <div>{next}</div>
-        </Layout>
+        <GatsbyImage image={image.gatsbyImageData} />
+        <div className='comicDesc'
+          dangerouslySetInnerHTML={{
+            __html: description.childMarkdownRemark.html,
+          }}
+        ></div>
+        <div>
+          <Link to={prevPath} className="Previous_Comic">Previous Comic</Link>
+          <Link to={nextPath} className="Next_Comic">Next Comic</Link>
+        </div>
+      </Layout>
     )
 }
 
@@ -34,6 +44,12 @@ export const pageQuery = graphql`
       image {
         gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 960)
         url
+      }
+      next{
+        slug
+      }
+      previous{
+        slug
       }
     }
   }
