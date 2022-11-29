@@ -45,5 +45,12 @@ export const query = graphql`
         }
       }
     }
+  allContentfulEmployee {
+    edges {
+      node {
+        id
+      }
+    }
   }
+}
 `
